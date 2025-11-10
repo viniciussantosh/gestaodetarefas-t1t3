@@ -4,17 +4,12 @@
 require_once CORE_PATH . 'Model.php';
 
 class RelatorioModel extends Model {
-    protected $table = 'tarefas'; // Usaremos a tabela tarefas
+    protected $table = 'tarefas';
 
     public function __construct() {
         parent::__construct();
     }
 
-    /**
-     * Obtém o resumo de tarefas por status para um usuário.
-     * @param int $usuarioId
-     * @return array
-     */
     public function getResumoPorStatus($usuarioId) {
         $sql = "SELECT status, COUNT(*) as total 
                 FROM {$this->table} 
@@ -25,11 +20,7 @@ class RelatorioModel extends Model {
         return $stmt->fetchAll();
     }
 
-    /**
-     * Obtém todas as tarefas de um usuário para geração de relatório detalhado.
-     * @param int $usuarioId
-     * @return array
-     */
+
     public function getTarefasParaRelatorio($usuarioId) {
         $sql = "SELECT titulo, descricao, data_vencimento, prioridade, status, data_criacao
                 FROM {$this->table} 
