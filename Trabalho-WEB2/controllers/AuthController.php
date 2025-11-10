@@ -8,7 +8,6 @@ class AuthController extends Controller {
     private $usuarioModel;
 
     public function __construct() {
-        // Inicia a sessão se ainda não estiver iniciada
         if (session_status() == PHP_SESSION_NONE) {
             session_start();
         }
@@ -127,9 +126,8 @@ class AuthController extends Controller {
         $this->redirect('/');
     }
     
-    // Método para recuperação de senha (apenas esqueleto, pois exige envio de e-mail)
+    // Método para recuperação de senha (apenas esqueleto, pois precisa envio de e-mail)
     public function forgotPassword() {
-        // Em um projeto real, aqui estaria a lógica para enviar um e-mail com um token
         $this->view('auth/forgot_password', ['titulo' => 'Recuperar Senha']);
     }
 }
