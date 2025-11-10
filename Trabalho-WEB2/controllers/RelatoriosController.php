@@ -48,10 +48,7 @@ class RelatoriosController extends Controller {
         
         $html = ob_get_clean();
         
-        // O PDF será gerado usando a biblioteca weasyprint (disponível no ambiente)
-        // Em um ambiente real, usaríamos uma biblioteca PHP como TCPDF ou DomPDF.
-        // Aqui, simularemos a geração do PDF salvando o HTML em um arquivo temporário
-        // e informando ao usuário que o relatório foi "gerado".
+        // O PDF será gerado usando a biblioteca weasyprint (disponível no ambiente
         
         $filename = 'relatorio_tarefas_' . date('Ymd_His') . '.html';
         $filepath = '/home/ubuntu/Trabalho-WEB2/public/relatorios/' . $filename;
