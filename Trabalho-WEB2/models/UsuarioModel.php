@@ -10,11 +10,6 @@ class UsuarioModel extends Model {
         parent::__construct();
     }
 
-    /**
-     * Busca um usuário pelo email.
-     * @param string $email
-     * @return array|false
-     */
     public function findByEmail($email) {
         $sql = "SELECT * FROM {$this->table} WHERE email = :email";
         $stmt = $this->db->prepare($sql);
@@ -22,13 +17,6 @@ class UsuarioModel extends Model {
         return $stmt->fetch();
     }
 
-    /**
-     * Cria um novo usuário.
-     * @param string $nome
-     * @param string $email
-     * @param string $senhaHash Senha já hasheada.
-     * @return bool
-     */
     public function create($nome, $email, $senhaHash) {
         $sql = "INSERT INTO {$this->table} (nome, email, senha) VALUES (:nome, :email, :senha)";
         $stmt = $this->db->prepare($sql);
