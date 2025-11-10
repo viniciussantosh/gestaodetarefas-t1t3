@@ -1,7 +1,6 @@
 <?php
 // Arquivo de configuração do sistema
 
-// Configurações do Banco de Dados
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root'); // Alterar para o usuário real
 define('DB_PASS', 'password'); // Alterar para a senha real
@@ -9,10 +8,10 @@ define('DB_NAME', 'web2_tarefas'); // Nome do banco de dados
 
 // Configurações da Aplicação
 define('APP_NAME', 'Gestão de Tarefas WEB2');
-define('BASE_URL', 'http://localhost:8000'); // Ajustar conforme o ambiente de execução
+define('BASE_URL', 'http://localhost:8000');
 
 // Configurações de Segurança
-define('SECRET_KEY', 'sua_chave_secreta_aqui_para_sessoes'); // Chave para segurança de sessões/cookies
+define('SECRET_KEY', 'sua_chave_secreta_aqui_para_sessoes');
 
 // Configurações de Caminhos
 define('ROOT_PATH', dirname(__DIR__));
